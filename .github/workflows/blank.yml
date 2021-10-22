@@ -1,0 +1,29 @@
+name: Sync Repos
+
+on:
+  schedule:
+    - cron:  '*/10 * * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+  
+      - uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: |
+            ${{ secrets.DESTINATION_SSH_PRIVATE_KEY }}
+          # ...Add any private keys necessary to access repos.
+
+      - name: Sync Script
+        run: ./sync.sh
