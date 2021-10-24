@@ -1,18 +1,14 @@
 # Sync Multiple Repositories
 
+This is a demonstration on how to synchronize multiple repositories.
+
 See the script [`sync.sh`](https://github.com/astone2014/sample1/blob/main/sync.sh) which synchronizes two repositories [sample1](https://github.com/astone2014/sample1) and [sample2](https://github.com/astone2014/sample2).
 
 ## Setup
 
-Setup the primary repo.
+Clone the primary repo.
 ```sh
 git clone https://github.com/astone2014/sample1.git
-```
-
-Show verbose remote output to visualize setup.
-
-```sh
-git remote -v
 ```
 
 ## Pushing
@@ -34,7 +30,7 @@ origin  https://github.com/astone2014/sample1.git (push)
 origin  https://github.com/astone2014/sample2.git (push)
 ```
 
-`git push` should push two remote repositories simultaneously.
+`git push` will now push two remote repositories simultaneously.
 ```sh
 git push origin main
 ```
@@ -69,9 +65,10 @@ git push origin main
 ## 🚀 GitHub Actions
 You can use [github actions](https://docs.github.com/en/actions/quickstart) to automate this process. If this is your first time creating an action I suggest reading [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions) to learn the basics.
 
-Create a [`.github/workflows/blank.yml`](https://github.com/astone2014/sample1/blob/main/.github/workflows/blank.yml) file in your workspace.
 
 ### Setup
+Create a [`.github/workflows/blank.yml`](https://github.com/astone2014/sample1/blob/main/.github/workflows/blank.yml) file in your workspace and open it up.
+
 Name your workflow at the top of the file.
 ```yml
 name: Sync Repos
