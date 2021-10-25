@@ -7,8 +7,13 @@ See the script [`sync.sh`](https://github.com/astone2014/sample1/blob/main/sync.
 ## Setup
 
 Clone the primary repo.
-```sh
-git clone https://github.com/astone2014/sample1.git
+```console
+foo@bar:~$ whoami
+foo
+foo@bar:git clone https://github.com/astone2014/sample1.git
+```
+```console
+astone@DESKTOP-145CE6O:~$ git clone https://github.com/astone2014/sample1.git
 ```
 
 ## Pushing
@@ -18,29 +23,24 @@ git remote set-url --add --push origin git@github.com:astone2014/sample1.git
 git remote set-url --add --push origin git@github.com:astone2014/sample2.git
 ```
 
-Show verbose remote output.
+Show verbose remote output. 
+The output should contain two push urls and one fetch.
 ```sh
-git remote -v
-```
-
-The output should look something like this (two push urls).
-```
+$ git remote -v
 origin  https://github.com/astone2014/sample1.git (fetch)
 origin  https://github.com/astone2014/sample1.git (push)
 origin  https://github.com/astone2014/sample2.git (push)
 ```
 
 `git push` will now push two remote repositories simultaneously.
+You will get 2 outputs, 1 for each repository.
 ```sh
-git push origin main
+$ git push origin main
+Everything up-to-date
+Everything up-to-date
 ```
 
-You will get 2 outputs, 1 for each repository.
-```
-Everything up-to-date
-Everything up-to-date
-```
-You can now push to as many repos as you'd like following this process! Just use `git remote set-url --add --push`.
+You can now push to as many repos as you'd like following this process!
 
 ## Pulling
 The problem with the solution is not pushing but pulling. You cannot pull from multiple remotes simultaneously. You can however fetch from multiple remotes.
