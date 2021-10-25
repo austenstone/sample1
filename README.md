@@ -7,13 +7,8 @@ See the script [`sync.sh`](https://github.com/astone2014/sample1/blob/main/sync.
 ## Setup
 
 Clone the primary repo.
-```console
-foo@bar:~$ whoami
-foo
-foo@bar:git clone https://github.com/astone2014/sample1.git
-```
-```console
-astone@DESKTOP-145CE6O:~$ git clone https://github.com/astone2014/sample1.git
+```sh
+git clone https://github.com/astone2014/sample1.git
 ```
 
 ## Pushing
