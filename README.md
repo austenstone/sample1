@@ -6,7 +6,7 @@ See the script [`sync.sh`](https://github.com/astone2014/sample1/blob/main/sync.
 
 ## Setup
 
-Clone the primary repo.
+Clone the master repo.
 ```sh
 git clone https://github.com/astone2014/sample1.git
 ```
